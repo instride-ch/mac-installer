@@ -2,9 +2,6 @@ tap 'bramstein/webfonttools'
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'homebrew/dupes'
-tap 'homebrew/fuse'
-tap 'homebrew/versions'
 
 
 #
@@ -34,9 +31,6 @@ cask '1password'
 
 cask 'appcleaner'
 # remove apps with system setting files
-
-cask 'disk-inventory-x'
-# helps you to find large files
 
 cask 'hyper'
 # nicer terminal
@@ -107,7 +101,6 @@ cask 'citrix-receiver'
 # Collaboration & communication
 #
 
-mas 'Dropmark', id: 554314609
 cask 'gitter'
 cask 'teamviewer'
 cask 'joinme'
@@ -133,17 +126,11 @@ cask 'imageoptim'
 # adobe stuff
 cask 'adobe-acrobat-pro'
 cask 'adobe-creative-cloud'
-cask 'adobe-illustrator-cc'
-cask 'adobe-indesign-cc'
-cask 'adobe-photoshop-cc'
 
 
 #
 # Multimedia & Tools
 #
-
-cask 'sonos'
-# sonos desktop controller
 
 cask 'gifrocket'
 # create gif's from movies
