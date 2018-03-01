@@ -123,10 +123,6 @@ cask 'imagealpha'
 cask 'imageoptim'
 # PNG optimization
 
-# adobe stuff
-cask 'adobe-acrobat-pro'
-cask 'adobe-creative-cloud'
-
 
 #
 # Multimedia & Tools

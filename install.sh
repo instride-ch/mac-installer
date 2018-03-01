@@ -55,5 +55,9 @@ nvm use 8.9.4
 notify '💪 Installing Yarn'
 brew install yarn --without-node
 
+# install Composer
+notify '💪 Installing Composer'
+brew install composer
+
 notify '✅ Everything should be installed by now'
 notify 'enjoy your freshly installed MAC  @ w-vision'
