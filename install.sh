@@ -3,9 +3,6 @@
 # logging
 function notify() { echo -e "\n\033[1m$@\033[0m"; }
 
-# Set the Application folder to the User
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-
 notify 'Welcome to w-vision, this script will install the Apps you need'
 notify 'in order to be up and running as quickly as possible'
 
