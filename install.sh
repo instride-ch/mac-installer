@@ -56,8 +56,13 @@ notify '💪 Installing Yarn'
 brew install yarn --without-node
 
 # install Composer
-notify '💪 Installing Composer'
-brew install composer
+if [[ ! "$(composer -v)" ]]; then
+    notify '💪 Installing Composer'
+    /usr/bin/ruby -e "$(curl -sS https://getcomposer.org/installer | php)";
+
+    sudo mv composer.phar /usr/local/bin/
+    echo 'alias composer="php /usr/local/bin/composer.phar"' >>~/.bash_profile
+fi
 
 notify '✅ Everything should be installed by now'
 notify 'enjoy your freshly installed MAC  @ w-vision'
