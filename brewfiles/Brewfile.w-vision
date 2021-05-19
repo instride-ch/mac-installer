@@ -1,0 +1,60 @@
+###################################################
+#     Extended Brewfile for w-vision              #
+###################################################
+
+tap 'bramstein/webfonttools'
+
+### OSX Terminal stuff that will make your life easier
+brew 'coreutils'
+brew 'curl'
+brew 'git'
+brew 'git-lfs'
+brew 'n'
+brew 'trash'
+brew 'wget'
+
+### System tools
+# nicer terminal
+cask 'hyper'
+
+# good font management for osx
+# ToDo: WoPa has FontExplorer. Does w-vision need that? License?
+cask 'rightfont'
+
+cask 'spectacle'
+# rearrange your OSX windows with shortcuts
+
+cask 'the-unarchiver'
+# better Unarchiver for OSX (supports more formats but works the same)
+
+# extends quicklook so it supports more formats
+# ToDo: Copy from base
+
+### Text & Code
+# OSX Coding tools and IOS Simulators
+mas 'Xcode', id: 497799835
+
+# most powerful ide for php and other programming languages
+cask 'phpstorm'
+
+# host for local development
+# ToDo: kitematic needed? Will docker desktop also be installed
+cask 'docker'
+cask 'kitematic'
+
+### Internet stuff
+# ToDo: Move something from base?
+
+### Collaboration & communication
+cask 'gitter'
+# git UI
+cask 'sourcetree'
+
+### MS Office & OpenOffice
+# ToDo: Move something from base?
+
+## Creative stuff & image tools
+# ToDo: Move something from base?
+
+## Multimedia & Tools
+# ToDo: Move something from base?
