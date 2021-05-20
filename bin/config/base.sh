@@ -133,10 +133,11 @@ defaults write com.apple.Safari ShowFavoritesBar -bool false
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 #"Disabling Safari's thumbnail cache for History and Top Sites"
-# ToDo: Next
+# ToDo: Check
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 #"Enabling Safari's debug menu"
+# ToDo: Only w-vision/developers?
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 #"Making Safari's search banners default to Contains instead of Starts With"
@@ -149,33 +150,21 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 #"Enabling the Develop menu and the Web Inspector in Safari"
+# ToDo: Only w-vision/developers?
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 
 #"Adding a context menu item for showing the Web Inspector in web views"
+# ToDo: Only w-vision/developers?
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-#"Use `~/Downloads/Incomplete` to store incomplete downloads"
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-
-#"Don't prompt for confirmation before downloading"
-defaults write org.m0k.transmission DownloadAsk -bool false
-
-#"Trash original torrent files"
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-#"Hide the donate message"
-defaults write org.m0k.transmission WarningDonate -bool false
-
-#"Hide the legal disclaimer"
-defaults write org.m0k.transmission WarningLegal -bool false
-
 #"Disable 'natural' (Lion-style) scrolling"
+# ToDo: Check if this is the correct one
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Don’t automatically rearrange Spaces based on most recent use
+# ToDo: Needed?
 defaults write com.apple.dock mru-spaces -bool false
 
 

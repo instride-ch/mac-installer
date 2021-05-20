@@ -56,7 +56,7 @@ if [[ ! "$(command -v nvm)" ]]; then
 fi
 
 notify '✅ Making sure you are using the correct node version'
-# ToDo: Which version?
+# ToDo: Use newer version?
 nvm install 8.9.4
 nvm use 8.9.4
 
