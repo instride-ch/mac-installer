@@ -29,23 +29,27 @@ do
     cat<<EOF
     ########################################################################
     # MacInstaller                                                         #
-    # Version : 1.0.0                                                      #
+    # Version : 2.0.0                                                      #
     ########################################################################
     #                                                                      #
     #  Please enter your choice:                                           #
     #                                                                      #
-    #  (1) WoPa                                                            #
-    #  (2) w-vision                                                        #
-    #  (3) Update                                                          #
+    #  (1) WoPa - Dispo                                                    #
+    #  (2) WoPa - Vorstufe                                                 #
+    #  (3) w-vision - PL                                                   #
+    #  (4) w-vision - Dev                                                  #
+    #  (5) Update                                                          #
     #  (0) Exit                                                            #
     #                                                                      #
     ########################################################################
 EOF
     read -n1 -s
     case "$REPLY" in
-    "1")  echo "WoPa..."                                 | $BIN/wopa.sh          ;;
-    "2")  echo "w-vision..."                             | $BIN/w-vision.sh      ;;
-    "3")  echo "Update..."                               | $BIN/update.sh        ;;
+    "1")  echo "WoPa - Dispo..."                         | $BIN/wopa_dispo.sh    ;;
+    "2")  echo "WoPa - Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
+    "3")  echo "w-vision - PL..."                        | $BIN/w-vision_pl.sh   ;;
+    "4")  echo "w-vision - Dev..."                       | $BIN/w-vision_dev.sh  ;;
+    "5")  echo "Update..."                               | $BIN/update.sh        ;;
     "0")  exit                                                                   ;;
      * )  echo "Invalid option!"                                                 ;;
     esac

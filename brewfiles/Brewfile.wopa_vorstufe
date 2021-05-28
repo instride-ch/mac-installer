@@ -1,0 +1,12 @@
+###################################################
+#     Extended Brewfile for WoPa - Vorstufe       #
+###################################################
+
+# Adobe CC
+cask 'adobe-creative-cloud'
+
+# Easyfind
+cask 'easyfind'
+
+# FontExplorer X
+cask 'fontexplorer-x-pro'

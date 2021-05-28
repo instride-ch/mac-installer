@@ -10,96 +10,29 @@ tap 'homebrew/core'
 brew 'bash'
 
 ### System tools
+cask '1password'
+cask 'appcleaner'
+
 # let you mount windows drives and write on it
 # ToDo: use 'macfuse' instead? (successor)
 cask 'osxfuse'
 
-# maintain your passwords
-cask '1password'
-
-# remove apps with system setting files
-cask 'appcleaner'
-
-# tool to remove unused languages for your mac
-# ToDo: Needed? If so, remove unused languages manually?
-cask 'monolingual'
-
-# record a part of the screen as gif
-# ToDo: Needed?
-cask 'recordit'
-
-# try expensive fonts for 1h
-# ToDo: Needed?
-cask 'fontstand'
-
-# rearrange your OSX windows with shortcuts
-# ToDo: Do WoPa need that too?
-cask 'spectacle'
-
-# better Unarchiver for OSX (supports more formats but works the same)
-cask 'the-unarchiver'
-
-# extends quicklook so it supports more formats
-# ToDo: Check and maybe extend - Divide between WoPa and w-vision
-cask 'qlcolorcode'
-cask 'qlimagesize'
-cask 'qlmarkdown'
-cask 'qlstephen'
-cask 'quicklook-csv'
-cask 'quicklook-json'
-cask 'webpquicklook'
-
 ### Internet stuff
-# best browser hands down
 cask 'google-chrome'
-
-# alternative for google chrome
-cask 'firefox'
-
-# only used for testing websites
-# ToDo: Still needed? If so, also for WoPa?
-cask 'opera'
-
-# ftp
-# ToDo: Which department needs that?
-# ToDo: Better Alternative for transmit (no license)
-mas 'Transmit', id: 403388562
-
-# citrix receiver
-# ToDo: Still available?
-cask 'citrix-receiver'
+cask 'responsively'
 
 ### Collaboration & communication
+cask 'dropbox'
 cask 'teamviewer'
 
-# ToDo: still needed?
-cask 'joinme'
-
-# ToDo: WoPa?
-cask 'slack'
-
-# ToDo: Remove?
-cask 'skype'
-
-# MS Office & OpenOffice
+### Microsoft
+mas 'Microsoft Remote Desktop', id: 1295203466
 cask 'microsoft-office'
 # ToDo: Check if 'microsoft-teams' is also needed
-
-# ToDo: WoPa?
-cask 'openoffice'
-
-### Creative stuff & image tools
-# create small transparent PNG
-# ToDo: still needed? WoPa?
-cask 'imagealpha'
-
-# PNG optimization
-# ToDo: still needed? WoPa?
-cask 'imageoptim'
+#cask 'microsoft-teams'
 
 ### Multimedia & Tools
-# create gif's from movies
-# Todo: still needed?
-cask 'gifrocket'
+cask 'spotify'
+cask 'airtame'
 
 

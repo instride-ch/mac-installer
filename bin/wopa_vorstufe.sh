@@ -4,10 +4,6 @@
 # Variables                                                                   #
 ###############################################################################
 
-# ToDo: Really needed?
-#BIN=~/MacInstaller/bin                # shell scripts
-#CONFIG=~/MacInstaller/config          # configuration files directory
-#SETUP=~/MacInstaller                  # root folder of MacInstaller
 CONFIG=../bin/config                   # configuration files directory
 
 ###############################################################################
@@ -40,14 +36,14 @@ notify '❗ NOT the apple store password:'
 # merge & copy correct Brewfile for easier update later
 # ToDo/Note: Didn't find an easier way. OK? We could also only use two different brewfiles without merging
 cp ../brewfiles/Brewfile ../Brewfile
-cat ../brewfiles/Brewfile.wopa >> ../Brewfile
+cat ../brewfiles/Brewfile.wopa_vorstufe >> ../Brewfile
 
 # install brew apps
 brew bundle
 
 notify '💪 Setting some Mac settings'
 $CONFIG/base.sh
-$CONFIG/wopa.sh
+$CONFIG/wopa_vorstufe.sh
 
 notify '✅ Everything should be installed by now'
 notify 'enjoy your freshly installed MAC  @ Woche-Pass AG'

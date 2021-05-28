@@ -1,0 +1,48 @@
+###################################################
+#     Extended Brewfile for w-vision PL           #
+###################################################
+
+# ToDo: Needed?
+tap 'bramstein/webfonttools'
+
+### System tools
+cask 'hyper'
+cask 'spectacle'
+cask 'the-unarchiver'
+
+# quicklook extensions
+cask 'qlcolorcode'
+cask 'qlimagesize'
+cask 'qlmarkdown'
+cask 'qlstephen'
+cask 'quicklook-csv'
+cask 'quicklook-json'
+cask 'webpquicklook'
+
+### Text, Code, Dev tools
+mas 'Xcode', id: 497799835
+cask 'docker'
+cask 'phpstorm'
+cask 'postman'
+cask 'sourcetree'
+cask 'textmate'
+
+### Browser
+cask 'microsoft-edge'
+cask 'firefox'
+cask 'opera'
+
+### Collaboration & communication
+cask 'discord'
+cask 'gitter'
+cask 'slack'
+cask 'wrike'
+
+### Adobe CC & OpenOffice
+cask 'adobe-creative-cloud'
+cask 'openoffice'
+
+### Multimedia & Tools
+cask 'mirrorop'
+cask 'imageoptim'
+cask 'imagealpha'

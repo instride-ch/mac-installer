@@ -1,1 +1,0 @@
-# Settings only for WoPa

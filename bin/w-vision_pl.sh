@@ -4,10 +4,6 @@
 # Variables                                                                   #
 ###############################################################################
 
-# ToDo: Really needed?
-#BIN=~/MacInstaller/bin                # shell scripts
-#CONFIG=~/MacInstaller/config          # configuration files directory
-#SETUP=~/MacInstaller                  # root folder of MacInstaller
 CONFIG=../bin/config                   # configuration files directory
 
 ###############################################################################
@@ -40,7 +36,7 @@ notify '❗ NOT the apple store password:'
 # merge & copy correct Brewfile for easier update later
 # ToDo/Note: Didn't find an easier way. OK? We could also only use two different brewfiles without merging
 cp ../brewfiles/Brewfile ../Brewfile
-cat ../brewfiles/Brewfile.w-vision >> ../Brewfile
+cat ../brewfiles/Brewfile.w-vision_pl >> ../Brewfile
 
 # install brew apps
 brew bundle
@@ -73,9 +69,11 @@ if [[ ! "$(composer -v)" ]]; then
     echo 'alias composer="php /usr/local/bin/composer.phar"' >>~/.bash_profile
 fi
 
+# ToDo: PHP 7.4/8.0
+
 notify '💪 Setting some Mac settings'
 $CONFIG/base.sh
-$CONFIG/w-vision.sh
+$CONFIG/w-vision_pl.sh
 
 notify '✅ Everything should be installed by now'
 notify 'enjoy your freshly installed MAC  @ w-vision'
