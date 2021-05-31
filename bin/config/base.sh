@@ -8,13 +8,13 @@
 # https://www.citrix.com/de-de/downloads/workspace-app/mac/workspace-app-for-mac-latest.html
 # https://downloads.citrix.com/19248/CitrixWorkspaceApp.dmg?__gda__=1622194393_4490d93b1515cedaab5f7210d0dfaef7
 
-# ToDo: JJK
-
 # ToDo: Trend micro download and install?
 # https://wfbs-svc-emea.trendmicro.com/wfbs-svc/download/de/view/activation_mgclink?id=-wZn9hACDIoLsXIZsH8MKHAeWh6i0mPzRSpKgB992wb8JwF8XEN61YU83AwzhFWzhcq_m4OopuobPRm7JbGY-pLLLa6Io3tYjx8uCpqoiFhd234wyLYkVPNiqIJPsE-zEX8LYMFycxisB18J6h9mqg%3D%3D
 
 # ToDo: Sonos Controller
 #https://www.sonos.com/redir/controller_software_mac
+
+# ToDo: recycling/_install_macbooks
 
 
 ### Connect network share

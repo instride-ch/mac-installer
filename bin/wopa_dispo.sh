@@ -4,7 +4,7 @@
 # Variables                                                                   #
 ###############################################################################
 
-CONFIG=../bin/config                   # configuration files directory
+CONFIG=~/MacInstaller/bin/config             # configuration files directory
 
 ###############################################################################
 

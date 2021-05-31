@@ -8,8 +8,8 @@
 #BIN=~/MacInstaller/bin                # shell scripts
 #CONFIG=~/MacInstaller/config          # configuration files directory
 #SETUP=~/MacInstaller                  # root folder of MacInstaller
-BIN=/bin                               # shell scripts
-CONFIG=/bin/config                     # configuration files directory
+BIN=~/MacInstaller/bin                 # shell scripts
+CONFIG=~/MacInstaller/bin/config       # configuration files directory
 
 ###############################################################################
 # Menu                                                                        #

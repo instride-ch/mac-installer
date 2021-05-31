@@ -6,6 +6,7 @@
 # ToDo: Filezilla: https://filezilla-project.org/download.php?platform=osx
 # ToDo: Pitstop Pro (needs login): https://www.impressed.de/produkte.php?c=detail&prnr=1019&link=dl (save install file on server?)
 # ToDo: Callas pdfToolbox: https://www.callassoftware.com/de/support/downloads (same as Pitstop Pro)
+# ToDo: JJK
 
 
 # ToDo: Filezilla settings/connections
