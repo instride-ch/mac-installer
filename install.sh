@@ -1,15 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Variables                                                                   #
 ###############################################################################
 
-# ToDo: Really needed?
-#BIN=~/MacInstaller/bin                # shell scripts
-#CONFIG=~/MacInstaller/config          # configuration files directory
-#SETUP=~/MacInstaller                  # root folder of MacInstaller
 BIN=~/MacInstaller/bin                 # shell scripts
-CONFIG=~/MacInstaller/bin/config       # configuration files directory
 
 ###############################################################################
 # Menu                                                                        #
@@ -18,14 +13,13 @@ CONFIG=~/MacInstaller/bin/config       # configuration files directory
 # logging
 function notify() { echo -e "\n\033[1m$@\033[0m"; }
 
+clear
+notify 'Welcome to Woche-Pass AG, this script will install the Apps you need
+in order to be up and running as quickly as possible'
+notify 'Before you start: Check if you manually signed in to the Mac App Store!'
 
-# ToDo: Consider generalizing scripts (or make git repo private?)
-notify 'Welcome to Woche-Pass AG, this script will install the Apps you need'
-notify 'in order to be up and running as quickly as possible'
-
-while :
-do
-    clear
+#while :
+#do
     cat<<EOF
     ########################################################################
     # MacInstaller                                                         #
@@ -45,13 +39,13 @@ do
 EOF
     read -n1 -s
     case "$REPLY" in
-    "1")  echo "WoPa - Dispo..."                         | $BIN/wopa_dispo.sh    ;;
-    "2")  echo "WoPa - Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
-    "3")  echo "w-vision - PL..."                        | $BIN/w-vision_pl.sh   ;;
-    "4")  echo "w-vision - Dev..."                       | $BIN/w-vision_dev.sh  ;;
-    "5")  echo "Update..."                               | $BIN/update.sh        ;;
-    "0")  exit                                                                   ;;
-     * )  echo "Invalid option!"                                                 ;;
+    "1")  notify "WoPa - Dispo..."                         | $BIN/wopa_dispo.sh    ;;
+    "2")  notify "WoPa - Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
+    "3")  notify "w-vision - PL..."                        | $BIN/w-vision_pl.sh   ;;
+    "4")  notify "w-vision - Dev..."                       | $BIN/w-vision_dev.sh  ;;
+    "5")  notify "Update..."                               | $BIN/update.sh        ;;
+    "0")  exit                                                                     ;;
+     * )  notify "Invalid option!"                                                 ;;
     esac
-    sleep 1
-done
+#    sleep 1
+#done

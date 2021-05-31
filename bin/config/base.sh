@@ -1,3 +1,12 @@
+### Connect network share (with AppleScript)
+osascript <<EOF
+set theResponse to display dialog "Username for network share:" default answer "" with icon note buttons {"Continue"} default button "Continue"
+--> {button returned:"Continue", text returned:""}
+mount volume "smb://" & (text returned of theResponse) & "@fs01.wopa.int/recycling"
+mount volume "smb://" & (text returned of theResponse) & "@fs01.wopa.int/"
+EOF
+
+
 ### Install software without brew
 # ToDo: Install software without brew: https://stackoverflow.com/a/21428907 or https://gist.github.com/tomohiro/3053979
 
@@ -17,9 +26,7 @@
 # ToDo: recycling/_install_macbooks
 
 
-### Connect network share
-#smb://fs01.wopa.int/
-#mount_smbfs //$Uname:$Passw@$SambaShare $Location
+
 
 
 #"Disabling system-wide resume"
