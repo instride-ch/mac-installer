@@ -2,7 +2,7 @@
 #     Base Brewfile for all departments           #
 ###################################################
 
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 
@@ -28,8 +28,7 @@ cask 'teamviewer'
 ### Microsoft
 mas 'Microsoft Remote Desktop', id: 1295203466
 cask 'microsoft-office'
-# ToDo: Check if 'microsoft-teams' is also needed
-#cask 'microsoft-teams'
+cask 'microsoft-teams'
 
 ### Multimedia & Tools
 cask 'spotify'

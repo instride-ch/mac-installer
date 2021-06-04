@@ -37,8 +37,8 @@ brew install mas
 #mas signin $APPLEID
 
 # merge & copy correct Brewfile for easier update later
-cp "$BASE"brewfiles/Brewfile "$BASE"Brewfile
-cat "$BASE"brewfiles/Brewfile.w-vision_pl >> "$BASE"Brewfile
+cp "$BASE"brewfiles/Brewfile ~/Brewfile
+cat "$BASE"brewfiles/Brewfile.wopa_dispo >> ~/Brewfile
 
 # install brew apps
 brew bundle

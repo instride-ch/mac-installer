@@ -37,10 +37,11 @@ brew install mas
 #mas signin $APPLEID
 
 # merge & copy correct Brewfile for easier update later
-cp "$BASE"brewfiles/Brewfile "$BASE"Brewfile
-cat "$BASE"brewfiles/Brewfile.w-vision_pl >> "$BASE"Brewfile
+cp "$BASE"brewfiles/Brewfile ~/Brewfile
+cat "$BASE"brewfiles/Brewfile.w-vision_dev >> ~/Brewfile
 
 # install brew apps
+notify '🍺 Installing brew apps'
 brew bundle
 
 # install nvm
@@ -72,6 +73,9 @@ if [[ ! "$(composer -v)" ]]; then
     sudo mv composer.phar /usr/local/bin/
     notify 'alias composer="php /usr/local/bin/composer.phar"' >>~/.bash_profile
 fi
+
+# install git
+brew install git
 
 # ToDo: PHP 7.4/8.0
 
