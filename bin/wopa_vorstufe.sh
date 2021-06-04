@@ -43,9 +43,10 @@ cat "$BASE"brewfiles/Brewfile.wopa_vorstufe >> ~/Brewfile
 # install brew apps
 brew bundle
 
+notify '✅ Software by brew should be installed by now'
+
 notify '💪 Setting some Mac settings'
 $CONFIG/base.sh
 $CONFIG/wopa_vorstufe.sh
 
-notify '✅ Everything should be installed by now'
-notify 'enjoy your freshly installed MAC  @ Woche-Pass AG'
+notify '🙏 Ready for take off! Please install the copied software in the folder "ToInstall".'

@@ -1,3 +1,7 @@
+### Variables
+SRC=/Volumes/recycling/_install_macbooks    # src path for manual software
+DEST=~/MacInstaller/ToInstall               # destination path for manual software
+
 ### Connect network share (with AppleScript)
 osascript <<EOF
 set theResponse to display dialog "Username for network share:" default answer "" with icon note buttons {"Continue"} default button "Continue"
@@ -6,29 +10,7 @@ mount volume "smb://" & (text returned of theResponse) & "@fs01.wopa.int/recycli
 mount volume "smb://" & (text returned of theResponse) & "@fs01.wopa.int/"
 EOF
 
-
-### Install software without brew
-# ToDo: Install software without brew: https://stackoverflow.com/a/21428907 or https://gist.github.com/tomohiro/3053979
-
-# ToDo: Cisco AnyConnect Secure Mobility Client
-#https://www.cisco.com/c/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/smb5642-install-cisco-anyconnect-secure-mobility-client-on-a-mac-com-rev1.html
-
-# ToDo: Citrix Workspace
-# https://www.citrix.com/de-de/downloads/workspace-app/mac/workspace-app-for-mac-latest.html
-# https://downloads.citrix.com/19248/CitrixWorkspaceApp.dmg?__gda__=1622194393_4490d93b1515cedaab5f7210d0dfaef7
-
-# ToDo: Trend micro download and install?
-# https://wfbs-svc-emea.trendmicro.com/wfbs-svc/download/de/view/activation_mgclink?id=-wZn9hACDIoLsXIZsH8MKHAeWh6i0mPzRSpKgB992wb8JwF8XEN61YU83AwzhFWzhcq_m4OopuobPRm7JbGY-pLLLa6Io3tYjx8uCpqoiFhd234wyLYkVPNiqIJPsE-zEX8LYMFycxisB18J6h9mqg%3D%3D
-
-# ToDo: Sonos Controller
-#https://www.sonos.com/redir/controller_software_mac
-
-# ToDo: recycling/_install_macbooks
-
-
-
-
-
+### Config
 #"Disabling system-wide resume"
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
@@ -196,21 +178,27 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write com.apple.dock mru-spaces -bool false
 
 
-# Microsoft Remote Desktop
-# ToDo: Check if settings can be imported
-
-# Intranet startpage (Leuchtturm)
-# ToDo: Add correct startpage
-
-# Synchronize bookmarks
-# ToDo: Synchronize bookmarks
-
-
-### Printers
-# ToDo: Install printer drivers and connect printers
-# ToDo: Canon imagePRESS C800
-# ToDo: Xerox WorkCentre 7530
-# ToDo: HP Laserjet 600
-
+### Install software without brew
+# RDP connections for microsoft remote desktop
+mkdir -p $DEST/rdp_verbindungen/ && cp -R $SRC/rdp_verbindungen/ $DEST/rdp_verbindungen/
+# Sonos controller
+mkdir -p $DEST/sonos_controller/ && cp -R $SRC/sonos_controller/ $DEST/sonos_controller/
+# Citrix Workspace
+mkdir -p $DEST/workspace_v2104_citrix/ && cp -R $SRC/workspace_v2104_citrix/ $DEST/workspace_v2104_citrix/
+# Canon printer
+mkdir -p $DEST/canon_drucker_vorstufe/ && cp -R $SRC/canon_drucker_vorstufe/ $DEST/canon_drucker_vorstufe/
+# Xerox printer
+mkdir -p $DEST/xerox_drucker/ && cp -R $SRC/xerox_drucker/ $DEST/xerox_drucker/
+# HP printer
+mkdir -p $DEST/hp_drucker/ && cp -R $SRC/hp_drucker/ $DEST/hp_drucker/
+# Cisco Any Connect
+mkdir -p $DEST/cisco_anyconnect_client/ && cp -R $SRC/cisco_anyconnect_client/ $DEST/cisco_anyconnect_client/
+# Procall
+mkdir -p $DEST/procall/ && cp -R $SRC/procall/ $DEST/procall/
+# Dockspaces
+mkdir -p $DEST/dock_spaces.txt && cp -R $SRC/dock_spaces.txt $DEST/dock_spaces.txt
 
 killall Finder
+
+## open folder in finder
+open $DEST

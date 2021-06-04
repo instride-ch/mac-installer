@@ -79,9 +79,10 @@ brew install git
 
 # ToDo: PHP 7.4/8.0
 
+notify '✅ Software by brew should be installed by now'
+
 notify '💪 Setting some Mac settings'
 $CONFIG/base.sh
 $CONFIG/w-vision_pl.sh
 
-notify '✅ Everything should be installed by now'
-notify 'enjoy your freshly installed MAC  @ w-vision'
+notify '🙏 Ready for take off! Please install the copied software in the folder "ToInstall".'
