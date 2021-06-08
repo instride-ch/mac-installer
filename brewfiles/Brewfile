@@ -34,4 +34,5 @@ cask 'microsoft-teams'
 cask 'spotify'
 cask 'airtame'
 
-
+### HP Printer
+mas 'HP Smart', id: 1474276998
