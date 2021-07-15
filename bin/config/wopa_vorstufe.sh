@@ -15,6 +15,8 @@ mkdir -p $DEST/photoshop_farbraeume/ && cp -R $SRC/photoshop_farbraeume/ $DEST/p
 mkdir -p $DEST/indesign_pdf_joboptions/ && cp -R $SRC/indesign_pdf_joboptions/ $DEST/indesign_pdf_joboptions/
 # Indesign scripts
 mkdir -p $DEST/indesign_scripts/ && cp -R $SRC/indesign_scripts/ $DEST/indesign_scripts/
+# Indesign preflight
+mkdir -p $DEST/indesign_preflight/ && cp -R $SRC/indesign_preflight/ $DEST/indesign_preflight/
 # Enfocus Pitstop
 mkdir -p $DEST/enfocus_21/ && cp -R $SRC/enfocus_21/ $DEST/enfocus_21/
 # Callas
@@ -24,5 +26,6 @@ mkdir -p $DEST/fontexplorer/ && cp -R $SRC/fontexplorer/ $DEST/fontexplorer/
 # JJK
 mkdir -p $DEST/JJKProduktion3/ && cp -R $SRC/JJKProduktion3/ $DEST/JJKProduktion3/
 mkdir -p $DEST/jjk_produktion_script/ && cp -R $SRC/jjk_produktion_script/ $DEST/jjk_produktion_script/
+mkdir -p $DEST/jjk_mono_framework/ && cp -R $SRC/jjk_mono_framework/ $DEST/jjk_mono_framework/
 # Ruler
 mkdir -p $DEST/ruler/ && cp -R $SRC/ruler/ $DEST/ruler/
