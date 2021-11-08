@@ -1,0 +1,38 @@
+###################################################
+#     Base Brewfile for all departments           #
+###################################################
+
+tap 'homebrew/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+
+### OSX Terminal stuff that will make your life easier
+brew 'bash'
+
+### System tools
+cask '1password'
+cask 'appcleaner'
+
+# let you mount windows drives and write on it
+# ToDo: use 'macfuse' instead? (successor)
+cask 'osxfuse'
+
+### Internet stuff
+cask 'google-chrome'
+cask 'responsively'
+
+### Collaboration & communication
+cask 'dropbox'
+cask 'teamviewer'
+
+### Microsoft
+mas 'Microsoft Remote Desktop', id: 1295203466
+cask 'microsoft-office'
+cask 'microsoft-teams'
+
+### Multimedia & Tools
+cask 'spotify'
+cask 'airtame'
+
+### HP Printer
+mas 'HP Smart', id: 1474276998
