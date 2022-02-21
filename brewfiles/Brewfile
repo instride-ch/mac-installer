@@ -14,8 +14,7 @@ cask '1password'
 cask 'appcleaner'
 
 # let you mount windows drives and write on it
-# ToDo: use 'macfuse' instead? (successor)
-cask 'osxfuse'
+cask 'macfuse'
 
 ### Internet stuff
 cask 'google-chrome'

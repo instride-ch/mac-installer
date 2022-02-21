@@ -48,9 +48,9 @@ cask 'gitter'
 cask 'slack'
 cask 'wrike'
 
-# Adobe CC & OpenOffice
+### Adobe CC & Libre Office
 cask 'adobe-creative-cloud'
-cask 'openoffice'
+cask 'libreoffice'
 
 ### Multimedia & Tools
 cask 'mirrorop'

@@ -191,8 +191,8 @@ mkdir -p $DEST/canon_drucker_vorstufe/ && cp -R $SRC/canon_drucker_vorstufe/ $DE
 mkdir -p $DEST/xerox_drucker/ && cp -R $SRC/xerox_drucker/ $DEST/xerox_drucker/
 # HP printer
 mkdir -p $DEST/hp_drucker/ && cp -R $SRC/hp_drucker/ $DEST/hp_drucker/
-# Cisco Any Connect
-mkdir -p $DEST/cisco_anyconnect_client/ && cp -R $SRC/cisco_anyconnect_client/ $DEST/cisco_anyconnect_client/
+# Forti Client
+mkdir -p $DEST/forticlient/ && cp -R $SRC/forticlient/ $DEST/forticlient/
 # Procall
 mkdir -p $DEST/procall/ && cp -R $SRC/procall/ $DEST/procall/
 # Dockspaces
