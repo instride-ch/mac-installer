@@ -54,10 +54,9 @@ if [[ ! "$(command -v nvm)" ]]; then
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 fi
 
-notify '✅ Making sure you are using the correct node version'
-# ToDo: Use newer version?
-nvm install 8.9.4
-nvm use 8.9.4
+notify '✅ Installing latest LTS Node.js version'
+nvm install --lts
+nvm use --lts
 
 # install Yarn
 notify '💪 Installing Yarn'
