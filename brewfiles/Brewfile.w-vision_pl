@@ -7,7 +7,7 @@ tap 'bramstein/webfonttools'
 
 ### System tools
 cask 'hyper'
-cask 'spectacle'
+cask 'rectangle'
 cask 'the-unarchiver'
 
 # quicklook extensions
