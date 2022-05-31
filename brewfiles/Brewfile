@@ -25,13 +25,10 @@ cask 'dropbox'
 cask 'teamviewer'
 
 ### Microsoft
-mas 'Microsoft Remote Desktop', id: 1295203466
+cask 'microsoft-remote-desktop'
 cask 'microsoft-office'
 cask 'microsoft-teams'
 
 ### Multimedia & Tools
 cask 'spotify'
 cask 'airtame'
-
-### HP Printer
-mas 'HP Smart', id: 1474276998
