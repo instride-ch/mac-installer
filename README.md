@@ -9,6 +9,11 @@ so by design this is very opinionated.
 - Get the files you need [here](https://github.com/w-vision/MacInstaller/archive/refs/heads/feat-2021.zip) 
   and extract them
 
+## ⏱ Preparation
+- Sign into the Mac App Store GUI manually
+- **For M1-Macs**: Install and create Rosetto Terminal, as explained [here](https://hackernoon.com/apple-m1-chip-how-to-install-homebrew-using-rosetta-su12331b)
+and use this Terminal for the installation process
+
 ## 💻 Installation
 - Copy the downloaded folder to your home directory (~) and rename it to MacInstaller 
   <br/>-> `~/MacInstaller/`

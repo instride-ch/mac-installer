@@ -189,14 +189,14 @@ mkdir -p $DEST/workspace_v2104_citrix/ && cp -R $SRC/workspace_v2104_citrix/ $DE
 mkdir -p $DEST/canon_drucker_vorstufe/ && cp -R $SRC/canon_drucker_vorstufe/ $DEST/canon_drucker_vorstufe/
 # Xerox printer
 mkdir -p $DEST/xerox_drucker/ && cp -R $SRC/xerox_drucker/ $DEST/xerox_drucker/
-# HP printer
-mkdir -p $DEST/hp_drucker/ && cp -R $SRC/hp_drucker/ $DEST/hp_drucker/
 # Forti Client
 mkdir -p $DEST/forticlient/ && cp -R $SRC/forticlient/ $DEST/forticlient/
 # Procall
 mkdir -p $DEST/procall/ && cp -R $SRC/procall/ $DEST/procall/
+# Dock plist
+mkdir -p $DEST/dock_plist/ && cp -R $SRC/dock_plist/ $DEST/dock_plist/
 # Dockspaces
-mkdir -p $DEST/dock_spaces.txt && cp -R $SRC/dock_spaces.txt $DEST/dock_spaces.txt
+mkdir -p $DEST/dock_spaces/ && cp -R $SRC/dock_spaces/ $DEST/dock_spaces/
 
 killall Finder
 
