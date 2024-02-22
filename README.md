@@ -1,17 +1,17 @@
-#  New WoPa/w-vision Mac
+#  New instride Mac
 Automatically installs all the Apps and configurations you will need for your 
-journey at WoPa/w-vision
+journey at instride
 
-This script is meant to automate some parts of the onboarding at WoPa/w-vision,
+This script is meant to automate some parts of the onboarding at instride,
 so by design this is very opinionated.
 
 ## 💾 Download
-- Get the files you need [here](https://github.com/w-vision/MacInstaller/archive/refs/heads/feat-2021.zip) 
+- Get the files you need [here](https://github.com/instride-ch/MacInstaller/archive/refs/heads/main.zip) 
   and extract them
 
 ## ⏱ Preparation
-- Sign into the Mac App Store GUI manually
-- **For M1-Macs**: Install and create Rosetto Terminal, as explained [here](https://hackernoon.com/apple-m1-chip-how-to-install-homebrew-using-rosetta-su12331b)
+- Sign into the Apple App Store GUI manually
+- **For M1-Macs**: Install and create Rosetta Terminal, as explained [here](https://hackernoon.com/apple-m1-chip-how-to-install-homebrew-using-rosetta-su12331b)
 and use this Terminal for the installation process
 
 ## 💻 Installation
