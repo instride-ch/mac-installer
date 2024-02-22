@@ -1,4 +1,4 @@
-# Settings only for w-vision - Dev
+# Settings only for instride - Dev
 
 ### Variables
 SRC=/Volumes/recycling/_install_macbooks    # src path for manual software

@@ -69,11 +69,11 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 
 #"Showing all filename extensions in Finder by default"
-# ToDo: Only for w-vision/developers
+# ToDo: Only for instride/developers
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 #"Disabling the warning when changing a file extension"
-# ToDo: Only for w-vision/developers
+# ToDo: Only for instride/developers
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 #"Use column view in all Finder windows by default"
@@ -147,7 +147,7 @@ defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 #"Enabling Safari's debug menu"
-# ToDo: Only w-vision/developers?
+# ToDo: Only instride/developers?
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 #"Making Safari's search banners default to Contains instead of Starts With"
@@ -160,13 +160,13 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 #"Enabling the Develop menu and the Web Inspector in Safari"
-# ToDo: Only w-vision/developers?
+# ToDo: Only instride/developers?
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 
 #"Adding a context menu item for showing the Web Inspector in web views"
-# ToDo: Only w-vision/developers?
+# ToDo: Only instride/developers?
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 #"Disable 'natural' (Lion-style) scrolling"

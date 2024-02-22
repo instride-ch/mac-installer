@@ -30,8 +30,8 @@ notify 'Before you start: Check if you manually signed in to the Mac App Store!'
     #                                                                      #
     #  (1) WoPa - Dispo                                                    #
     #  (2) WoPa - Vorstufe                                                 #
-    #  (3) w-vision - PL                                                   #
-    #  (4) w-vision - Dev                                                  #
+    #  (3) instride - PL                                                   #
+    #  (4) instride - Dev                                                  #
     #  (5) Update                                                          #
     #  (0) Exit                                                            #
     #                                                                      #
@@ -41,8 +41,8 @@ EOF
     case "$REPLY" in
     "1")  notify "WoPa - Dispo..."                         | $BIN/wopa_dispo.sh    ;;
     "2")  notify "WoPa - Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
-    "3")  notify "w-vision - PL..."                        | $BIN/w-vision_pl.sh   ;;
-    "4")  notify "w-vision - Dev..."                       | $BIN/w-vision_dev.sh  ;;
+    "3")  notify "instride - PL..."                        | $BIN/instride_pl.sh   ;;
+    "4")  notify "instride - Dev..."                       | $BIN/instride_dev.sh  ;;
     "5")  notify "Update..."                               | $BIN/update.sh        ;;
     "0")  exit                                                                     ;;
      * )  notify "Invalid option!"                                                 ;;

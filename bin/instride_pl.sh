@@ -40,7 +40,7 @@ brew install mas
 
 # merge & copy correct Brewfile for easier update later
 cp "$BASE"brewfiles/Brewfile ~/Brewfile
-cat "$BASE"brewfiles/Brewfile.w-vision_dev >> ~/Brewfile
+cat "$BASE"brewfiles/Brewfile.instride_pl >> ~/Brewfile
 
 # install brew apps
 notify '🍺 Installing brew apps'
@@ -56,6 +56,7 @@ if [[ ! "$(command -v nvm)" ]]; then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     export source="~/.nvm/nvm.sh"
+
 fi
 
 notify '✅ Installing latest LTS Node.js version'
@@ -87,6 +88,6 @@ notify '✅ Software by brew should be installed by now'
 
 notify '💪 Setting some Mac settings'
 $CONFIG/base.sh
-$CONFIG/w-vision_dev.sh
+$CONFIG/instride_pl.sh
 
 notify '🙏 Ready for take off! Please install the copied software in the folder "ToInstall".'
