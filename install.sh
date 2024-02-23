@@ -28,10 +28,10 @@ notify 'Before you start: Check if you manually signed in to the Mac App Store!'
     #                                                                      #
     #  Please enter your choice:                                           #
     #                                                                      #
-    #  (1) WoPa - Dispo                                                    #
-    #  (2) WoPa - Vorstufe                                                 #
-    #  (3) instride - PL                                                   #
-    #  (4) instride - Dev                                                  #
+    #  (1) WoPa – Dispo                                                    #
+    #  (2) WoPa – Vorstufe                                                 #
+    #  (3) instride – PL                                                   #
+    #  (4) instride – Dev                                                  #
     #  (5) Update                                                          #
     #  (0) Exit                                                            #
     #                                                                      #
@@ -39,10 +39,10 @@ notify 'Before you start: Check if you manually signed in to the Mac App Store!'
 EOF
     read -n1 -s
     case "$REPLY" in
-    "1")  notify "WoPa - Dispo..."                         | $BIN/wopa_dispo.sh    ;;
-    "2")  notify "WoPa - Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
-    "3")  notify "instride - PL..."                        | $BIN/instride_pl.sh   ;;
-    "4")  notify "instride - Dev..."                       | $BIN/instride_dev.sh  ;;
+    "1")  notify "WoPa – Dispo..."                         | $BIN/wopa_dispo.sh    ;;
+    "2")  notify "WoPa – Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
+    "3")  notify "instride – PL..."                        | $BIN/instride_pl.sh   ;;
+    "4")  notify "instride – Dev..."                       | $BIN/instride_dev.sh  ;;
     "5")  notify "Update..."                               | $BIN/update.sh        ;;
     "0")  exit                                                                     ;;
      * )  notify "Invalid option!"                                                 ;;
