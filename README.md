@@ -1,4 +1,5 @@
-#  New instride Mac
+![Mac Installer](docs/images/github_banner.png)
+
 Automatically installs all the Apps and configurations you will need for your 
 journey at instride
 
