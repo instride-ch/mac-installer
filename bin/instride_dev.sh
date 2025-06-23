@@ -31,6 +31,8 @@ fi
 brew tap Homebrew/bundle
 brew install mas
 
+read -p "Please go to the App Store and sign in with your Apple-ID, Press [ENTER ↵] when done: "
+
 # Not working ATM: https://github.com/mas-cli/mas/issues/164
 # Get Apple ID
 #notify ' Enter your Apple-ID followed by [ENTER ↵]:'
@@ -51,11 +53,10 @@ if [[ ! "$(command -v nvm)" ]]; then
     notify '🌶 Installing node version manager'
     /usr/bin/ruby -e "$(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash)";
 
-    # ToDo: Check if both is needed
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    export source="~/.nvm/nvm.sh"
+
 fi
 
 notify '✅ Installing latest LTS Node.js version'
@@ -69,9 +70,7 @@ brew install yarn --ignore-dependencies
 # install Composer
 if [[ ! "$(composer -v)" ]]; then
     notify '💪 Installing Composer'
-    /usr/bin/ruby -e "$(curl -o composer.phar -sS https://getcomposer.org/download/1.10.16/composer.phar)";
-# ToDo: Composer v2
-#    /usr/bin/ruby -e "$(curl -sS https://getcomposer.org/installer | php)";
+    /usr/bin/ruby -e "$(curl -o composer.phar -sS https://getcomposer.org/download/2.8.9/composer.phar)";
 
     sudo mkdir /usr/local/bin
     sudo mv composer.phar /usr/local/bin/
@@ -81,7 +80,9 @@ fi
 # install git
 brew install git
 
-# ToDo: PHP 7.4/8.0
+# install PHP 7.4 and latest PHP
+brew install php@7.4
+brew install php
 
 notify '✅ Software by brew should be installed by now'
 

@@ -31,6 +31,7 @@ cask 'webpquicklook'
 ### Text, Code, Dev tools
 mas 'Xcode', id: 497799835
 cask 'docker'
+cask 'orbstack'
 cask 'phpstorm'
 cask 'postman'
 cask 'sourcetree'
