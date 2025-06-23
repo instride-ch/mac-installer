@@ -25,9 +25,9 @@ cask 'dropbox'
 cask 'teamviewer'
 
 ### Microsoft
-cask 'microsoft-remote-desktop'
 cask 'microsoft-office'
 cask 'microsoft-teams'
+cask 'microsoft-outlook'
 
 ### Multimedia & Tools
 cask 'spotify'
