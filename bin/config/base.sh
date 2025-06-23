@@ -109,6 +109,10 @@ mkdir -p $DEST/workspace_v2104_citrix/ && cp -R $SRC/workspace_v2104_citrix/ $DE
 mkdir -p $DEST/dock_plist/ && cp -R $SRC/dock_plist/ $DEST/dock_plist/
 # Dockspaces
 mkdir -p $DEST/dock_spaces/ && cp -R $SRC/dock_spaces/ $DEST/dock_spaces/
+# DefenderForBusiness
+mkdir -p $DEST/DefenderForBusiness/ && cp -R $SRC/DefenderForBusiness/ $DEST/DefenderForBusiness/
+# To Do's
+cp $SRC/TODO.pdf $DEST/TODO.pdf
 
 killall Finder
 

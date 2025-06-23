@@ -14,7 +14,7 @@ BIN=~/MacInstaller/bin                 # shell scripts
 function notify() { echo -e "\n\033[1m$@\033[0m"; }
 
 clear
-notify 'Welcome to Woche-Pass AG, this script will install the Apps you need
+notify 'Welcome to Woche-Pass AG or instride AG, this script will install the Apps you need
 in order to be up and running as quickly as possible'
 notify 'Before you start: Check if you manually signed in to the Mac App Store!'
 

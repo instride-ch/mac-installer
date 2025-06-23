@@ -31,8 +31,6 @@ fi
 brew tap Homebrew/bundle
 brew install mas
 
-read -p "Please go to the App Store and sign in with your Apple-ID, Press [ENTER ↵] when done: "
-
 # Not working ATM: https://github.com/mas-cli/mas/issues/164
 # Get Apple ID
 #notify ' Enter your Apple-ID followed by [ENTER ↵]:'
