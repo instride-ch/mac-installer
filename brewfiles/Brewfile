@@ -21,8 +21,7 @@ cask 'google-chrome'
 cask 'responsively'
 
 ### Collaboration & communication
-cask 'dropbox'
-cask 'teamviewer'
+cask 'miro'
 
 ### Microsoft
 cask 'microsoft-office'

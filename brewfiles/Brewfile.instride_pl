@@ -2,9 +2,6 @@
 #     Extended Brewfile for instride PL           #
 ###################################################
 
-# ToDo: Needed?
-tap 'bramstein/webfonttools'
-
 ### System tools
 cask 'hyper'
 cask 'rectangle'
@@ -23,7 +20,7 @@ cask 'webpquicklook'
 mas 'Xcode', id: 497799835
 cask 'postman'
 cask 'sourcetree'
-cask 'textmate'
+cask 'zed'
 
 ### Browser
 cask 'microsoft-edge'
@@ -36,9 +33,12 @@ cask 'gitter'
 cask 'slack'
 cask 'wrike'
 
-### Adobe CC & LibreOffice
+### Adobe CC, Libre Office & Microsoft
 cask 'adobe-creative-cloud'
 cask 'libreoffice'
+cask 'microsoft-excel'
+cask 'microsoft-powerpoint'
+cask 'microsoft-word'
 
 ### Multimedia & Tools
 cask 'mirrorop'

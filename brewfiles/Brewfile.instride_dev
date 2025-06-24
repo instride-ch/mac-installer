@@ -2,9 +2,6 @@
 #     Extended Brewfile for instride Dev          #
 ###################################################
 
-# ToDo: Needed?
-tap 'bramstein/webfonttools'
-
 ### OSX Terminal stuff that will make your life easier
 brew 'coreutils'
 brew 'curl'
@@ -35,7 +32,7 @@ cask 'orbstack'
 cask 'phpstorm'
 cask 'postman'
 cask 'sourcetree'
-cask 'textmate'
+cask 'zed'
 
 ### Internet stuff
 # only used for testing websites
@@ -49,9 +46,12 @@ cask 'gitter'
 cask 'slack'
 cask 'wrike'
 
-### Adobe CC & Libre Office
+### Adobe CC, Libre Office & Microsoft
 cask 'adobe-creative-cloud'
 cask 'libreoffice'
+cask 'microsoft-excel'
+cask 'microsoft-powerpoint'
+cask 'microsoft-word'
 
 ### Multimedia & Tools
 cask 'mirrorop'

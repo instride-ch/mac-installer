@@ -8,3 +8,5 @@ DEST=~/MacInstaller/ToInstall               # destination path for manual softwa
 
 # Filezilla
 mkdir -p $DEST/filezilla/ && cp -R $SRC/filezilla/ $DEST/filezilla/
+# Busylight
+mkdir -p $DEST/busylight/ && cp -R $SRC/busylight/ $DEST/busylight/
