@@ -32,7 +32,8 @@ notify 'Before you start: Check if you manually signed in to the Mac App Store!'
     #  (2) WoPa – Vorstufe                                                 #
     #  (3) instride – PL                                                   #
     #  (4) instride – Dev                                                  #
-    #  (5) Update                                                          #
+    #  (5) instride – UX                                                   #
+    #  (6) Update                                                          #
     #  (0) Exit                                                            #
     #                                                                      #
     ########################################################################
@@ -43,7 +44,8 @@ EOF
     "2")  notify "WoPa – Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
     "3")  notify "instride – PL..."                        | $BIN/instride_pl.sh   ;;
     "4")  notify "instride – Dev..."                       | $BIN/instride_dev.sh  ;;
-    "5")  notify "Update..."                               | $BIN/update.sh        ;;
+    "5")  notify "instride – UX..."                        | $BIN/instride_ux.sh   ;;
+    "6")  notify "Update..."                               | $BIN/update.sh        ;;
     "0")  exit                                                                     ;;
      * )  notify "Invalid option!"                                                 ;;
     esac
