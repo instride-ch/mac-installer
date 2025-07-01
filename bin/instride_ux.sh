@@ -28,7 +28,7 @@ if [[ ! "$(type -P brew)" ]]; then
 fi
 
 # installs bundle Bundle
-#brew tap Homebrew/bundle
+brew tap Homebrew/bundle
 #brew install mas
 
 # Not working ATM: https://github.com/mas-cli/mas/issues/164
@@ -40,7 +40,7 @@ fi
 
 # merge & copy correct Brewfile for easier update later
 cp "$BASE"brewfiles/Brewfile ~/Brewfile
-cat "$BASE"brewfiles/Brewfile.instride_dev >> ~/Brewfile
+cat "$BASE"brewfiles/Brewfile.instride_ux >> ~/Brewfile
 
 # install brew apps
 notify '🍺 Installing brew apps'
@@ -78,8 +78,7 @@ fi
 # install git
 brew install git
 
-# install PHP 7.4 and latest PHP
-brew install php@7.4
+# install latest PHP
 brew install php
 
 notify '✅ Software by brew should be installed by now'

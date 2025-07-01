@@ -78,8 +78,7 @@ fi
 # install git
 brew install git
 
-# install PHP 7.4 and latest PHP
-brew install php@7.4
+# install latest PHP
 brew install php
 
 notify '✅ Software by brew should be installed by now'

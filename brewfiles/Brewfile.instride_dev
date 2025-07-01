@@ -42,16 +42,11 @@ cask 'opera'
 
 ### Collaboration & communication
 cask 'discord'
-cask 'gitter'
-cask 'slack'
 cask 'wrike'
 
 ### Adobe CC, Libre Office & Microsoft
 cask 'adobe-creative-cloud'
 cask 'libreoffice'
-cask 'microsoft-excel'
-cask 'microsoft-powerpoint'
-cask 'microsoft-word'
 
 ### Multimedia & Tools
 cask 'mirrorop'

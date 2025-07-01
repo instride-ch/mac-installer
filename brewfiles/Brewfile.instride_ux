@@ -33,17 +33,13 @@ cask 'opera'
 
 ### Collaboration & communication
 cask 'discord'
-cask 'gitter'
-cask 'slack'
 cask 'wrike'
 
-### Adobe CC, Libre Office & Microsoft
+### Adobe CC, Libre Office
 cask 'adobe-creative-cloud'
-cask 'microsoft-excel'
-cask 'microsoft-powerpoint'
-cask 'microsoft-word'
 
 ### Multimedia & Tools
 cask 'mirrorop'
 cask 'imageoptim'
 cask 'imagealpha'
+cask 'canva'
