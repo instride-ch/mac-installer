@@ -6,4 +6,3 @@ BREWFILES=(Brewfile Brewfile.instride Brewfile.instride_dev)
 SHARE_ITEMS=(filezilla busylight)
 DEFAULTS=(developer)        # defaults_base is always applied
 SETUP_NODE=true
-SETUP_GIT=true

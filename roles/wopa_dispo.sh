@@ -6,4 +6,3 @@ BREWFILES=(Brewfile Brewfile.wopa_dispo)
 SHARE_ITEMS=(filezilla)
 DEFAULTS=()
 SETUP_NODE=false
-SETUP_GIT=false

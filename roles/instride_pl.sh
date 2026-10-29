@@ -6,4 +6,3 @@ BREWFILES=(Brewfile Brewfile.instride Brewfile.instride_pl)
 SHARE_ITEMS=(filezilla busylight)
 DEFAULTS=()
 SETUP_NODE=false
-SETUP_GIT=true

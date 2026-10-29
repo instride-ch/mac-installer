@@ -203,7 +203,6 @@ function mount_share() {
 set theResponse to display dialog "Username for network share:" default answer "" with icon note buttons {"Continue"} default button "Continue"
 --> {button returned:"Continue", text returned:""}
 mount volume "smb://" & (text returned of theResponse) & "@$SHARE_HOST/recycling"
-mount volume "smb://" & (text returned of theResponse) & "@$SHARE_HOST/"
 EOF
 
     if [[ ! -d "$SHARE_SRC" ]]; then

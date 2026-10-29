@@ -69,7 +69,6 @@ ensure_brew
 install_brewfiles "${BREWFILES[@]}"
 
 if [[ "$SETUP_NODE" == true ]]; then setup_node; fi
-if [[ "$SETUP_GIT" == true ]]; then setup_git; fi
 
 if mount_share; then
     copy_from_share "${BASE_SHARE_ITEMS[@]}" "${SHARE_ITEMS[@]}"

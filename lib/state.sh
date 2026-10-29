@@ -3,8 +3,6 @@
 # Brew packages and the Homebrew PATH entry in ~/.zprofile are not reverted.
 
 STATE_DIR="$HOME/.macinstaller"                    # backup of the original state
-SSH_MARK_BEGIN='# >>> macinstaller >>>'
-SSH_MARK_END='# <<< macinstaller <<<'
 
 ###############################################################################
 # Backup                                                                      #
@@ -130,26 +128,6 @@ function revert_node() {
     fi
 }
 
-function revert_git() {
-    local answer key="$HOME/.ssh/id_ed25519"
-
-    if remembered git_name_set; then git config --global --unset user.name || true; info '↩︎ git user.name'; fi
-    if remembered git_email_set; then git config --global --unset user.email || true; info '↩︎ git user.email'; fi
-
-    if [[ -f "$HOME/.ssh/config" ]]; then
-        sed -i '' "/^$SSH_MARK_BEGIN\$/,/^$SSH_MARK_END\$/d" "$HOME/.ssh/config"
-    fi
-
-    if remembered ssh_key_created && [[ -f "$key" ]]; then
-        read -r -n1 -p "Delete the SSH key $key created by the installer? It may be registered on GitHub / GitLab. [y/N] " answer; echo
-        if [[ "$answer" =~ ^[Yy]$ ]]; then
-            ssh-add -d "$key" 2>/dev/null || true
-            rm -f "$key" "$key.pub"
-            info "↩︎ removed $key"
-        fi
-    fi
-}
-
 # Undo everything the installer changed, except brew packages
 function revert_all() {
     if [[ ! -d "$STATE_DIR" ]]; then
@@ -164,7 +142,6 @@ function revert_all() {
     revert_gatekeeper
     restore_file "$HOME/Brewfile" Brewfile
     revert_node
-    revert_git
     rm -rf "$DEST"
     restart_ui
 

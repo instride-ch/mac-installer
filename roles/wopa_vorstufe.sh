@@ -19,4 +19,3 @@ SHARE_ITEMS=(
 )
 DEFAULTS=()
 SETUP_NODE=false
-SETUP_GIT=false
