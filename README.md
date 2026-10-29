@@ -7,7 +7,7 @@ This script is meant to automate some parts of the onboarding,
 so by design this is very opinionated.
 
 ## 💾 Download
-- Get the files [here](https://github.com/instride-ch/MacInstaller/archive/refs/heads/main.zip)
+- Get the files [here](https://github.com/instride-ch/mac-installer/archive/refs/heads/main.zip)
   and extract them, or clone the repository. Any location works.
 
 ## ⏱ Preparation
@@ -16,7 +16,7 @@ so by design this is very opinionated.
 
 ## 💻 Installation
 - Open the Terminal app
-- Type `bash <path-to-folder>/install.sh`, e.g. `bash ~/Downloads/MacInstaller-main/install.sh`
+- Type `bash <path-to-folder>/install.sh`, e.g. `bash ~/Downloads/mac-installer-main/install.sh`
 - Hit the [ENTER ↵] key
 - Follow the instructions in the terminal. **You will be prompted for your system password**
 - At the end the script lists manual steps and opens the folder `ToInstall` with software to install by hand
