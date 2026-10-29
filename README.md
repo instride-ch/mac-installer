@@ -37,4 +37,12 @@ Apps that are already installed are detected and skipped, so the script can be r
 Role settings live in `roles/`, shared logic in `lib/`.
 
 ## 🔄 Update
-Choose `(6) Update` in the menu or run `bash bin/update.sh`.
+Choose `(6) Update` in the menu or run `bash update.sh`.
+
+## ↩️ Revert
+Choose `(7) Revert` in the menu to undo the changes of the installer:
+macOS settings, Gatekeeper, `~/Brewfile`, nvm / Node.js versions, git identity, SSH config
+(the SSH key only after confirmation) and the `ToInstall` folder.
+
+Brew packages and the Homebrew PATH entry in `~/.zprofile` stay installed.
+The original state is recorded in `~/.macinstaller/` on the first installer run.

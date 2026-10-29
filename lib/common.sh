@@ -64,12 +64,12 @@ function ensure_brew() {
     eval "$("$brew" shellenv)"
 }
 
-# Merge the given brewfiles into ~/Brewfile (used by bin/update.sh later) and install every entry
+# Merge the given brewfiles into ~/Brewfile (used by update.sh later) and install every entry
 function install_brewfiles() {
     local brewfile="$HOME/Brewfile" file line
     local re_pkg="^(brew|cask) '([^']+)'" re_mas="^mas '([^']+)', id: ([0-9]+)"
 
-    if [[ -f "$brewfile" ]]; then cp "$brewfile" "$brewfile.bak"; fi
+    backup_file "$brewfile" Brewfile
     : > "$brewfile"
     for file in "$@"; do
         cat "$SCRIPT_DIR/brewfiles/$file" >> "$brewfile"
@@ -139,8 +139,14 @@ function setup_node() {
 
     if [[ -s "$NVM_DIR/nvm.sh" ]]; then
         info '✓ nvm already installed'
+        if ! remembered nvm_installed; then
+            remember node_versions "$(ls "$NVM_DIR/versions/node" 2>/dev/null || true)"
+            backup_file "$NVM_DIR/alias/default" nvm_alias_default
+        fi
     else
         notify '🌶 Installing node version manager'
+        remember nvm_installed
+        if [[ ! -f "$HOME/.zshrc" ]]; then remember zshrc.absent; fi
         touch "$HOME/.zshrc"
         curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | PROFILE="$HOME/.zshrc" bash
     fi
@@ -164,10 +170,12 @@ function setup_git() {
     if [[ -z "$name" ]]; then
         read -r -p 'Git user name (e.g. Jane Doe): ' name
         git config --global user.name "$name"
+        remember git_name_set
     fi
     if [[ -z "$email" ]]; then
         read -r -p 'Git e-mail: ' email
         git config --global user.email "$email"
+        remember git_email_set
     fi
 
     if [[ -f "$key" ]]; then return 0; fi
@@ -177,8 +185,11 @@ function setup_git() {
 
     mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
     ssh-keygen -t ed25519 -C "$email" -f "$key"
+    remember ssh_key_created
+    # markers let the revert remove exactly this block
     if ! grep -qs UseKeychain "$HOME/.ssh/config"; then
-        printf 'Host *\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519\n' >> "$HOME/.ssh/config"
+        printf '%s\nHost *\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519\n%s\n' \
+            "$SSH_MARK_BEGIN" "$SSH_MARK_END" >> "$HOME/.ssh/config"
     fi
     ssh-add --apple-use-keychain "$key" || warn 'Could not add the SSH key to the agent'
     pbcopy < "$key.pub"
