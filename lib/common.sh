@@ -13,7 +13,7 @@ NVM_VERSION=v0.40.8                                # https://github.com/nvm-sh/n
 # shellcheck disable=SC2034  # used by install.sh
 BASE_SHARE_ITEMS=(sonos_controller workspace_v2104_citrix dock_plist dock_spaces DefenderForBusiness)
 
-FAILED_PACKAGES=()                                 # brew / mas entries that failed to install
+FAILED_COMMANDS=()                                 # install commands that failed (to re-run by hand)
 MISSING_ITEMS=()                                   # share items that could not be copied
 MANUAL_STEPS=()                                    # hints printed in the summary
 
@@ -97,7 +97,7 @@ function install_brew() {
     fi
 
     info "⬇️  Installing $name"
-    brew install "$name" || FAILED_PACKAGES+=("$name")
+    brew install "$name" || FAILED_COMMANDS+=("brew install $name")
 }
 
 function install_cask() {
@@ -117,7 +117,7 @@ function install_cask() {
     done < <(brew info --cask "$name" 2>/dev/null | sed -n 's/^\(.*\.app\) (App)$/\1/p')
 
     info "⬇️  Installing $name"
-    brew install --cask "$name" || FAILED_PACKAGES+=("$name")
+    brew install --cask "$name" || FAILED_COMMANDS+=("brew install --cask $name")
 }
 
 # Mac App Store apps (you have to be signed in to the App Store)
@@ -130,7 +130,7 @@ function install_mas() {
     fi
 
     info "⬇️  Installing $name (App Store)"
-    mas install "$id" || FAILED_PACKAGES+=("$name")
+    mas install "$id" || FAILED_COMMANDS+=("mas install $id  # $name, sign in to the App Store first")
 }
 
 # Install nvm and the latest LTS Node.js version
@@ -231,11 +231,11 @@ function restart_ui() {
 }
 
 function print_summary() {
-    local step
+    local step command
 
-    if (( ${#FAILED_PACKAGES[@]} )); then
-        warn "Failed to install: ${FAILED_PACKAGES[*]}"
-        MANUAL_STEPS+=("Check the errors above and re-run: brew bundle --file=$HOME/Brewfile")
+    if (( ${#FAILED_COMMANDS[@]} )); then
+        warn 'Failed to install (check the errors above, then run these commands yourself):'
+        for command in "${FAILED_COMMANDS[@]}"; do echo "  $command"; done
     fi
 
     if (( ${#MISSING_ITEMS[@]} )); then
