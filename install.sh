@@ -48,7 +48,7 @@ EOF
     # shellcheck source=roles/instride_dev.sh
     case "$choice" in
     [1-5]) source "$SCRIPT_DIR/roles/${ROLES[choice - 1]}.sh"; break     ;;
-    "6")   notify 'Update...'; exec "$SCRIPT_DIR/bin/update.sh"              ;;
+    "6")   notify 'Update...'; exec "$SCRIPT_DIR/update.sh"              ;;
     "0")   exit 0                                                            ;;
      * )   notify 'Invalid option!'                                          ;;
     esac
