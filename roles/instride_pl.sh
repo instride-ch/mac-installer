@@ -4,5 +4,4 @@
 ROLE_NAME="instride – PL"
 BREWFILES=(Brewfile Brewfile.instride Brewfile.instride_pl)
 SHARE_ITEMS=(filezilla busylight)
-DEFAULTS=()
 SETUP_NODE=false

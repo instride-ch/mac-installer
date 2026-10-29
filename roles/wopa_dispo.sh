@@ -4,5 +4,4 @@
 ROLE_NAME="WoPa – Dispo"
 BREWFILES=(Brewfile Brewfile.wopa_dispo)
 SHARE_ITEMS=(filezilla)
-DEFAULTS=()
 SETUP_NODE=false

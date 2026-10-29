@@ -11,7 +11,7 @@ NVM_VERSION=v0.40.8                                # https://github.com/nvm-sh/n
 
 # copied from the network share for every role
 # shellcheck disable=SC2034  # used by install.sh
-BASE_SHARE_ITEMS=(sonos_controller workspace_v2104_citrix dock_plist dock_spaces DefenderForBusiness)
+BASE_SHARE_ITEMS=(sonos_controller workspace_v2104_citrix forticlient dock_plist dock_spaces DefenderForBusiness)
 
 FAILED_COMMANDS=()                                 # install commands that failed (to re-run by hand)
 MISSING_ITEMS=()                                   # share items that could not be copied
@@ -69,7 +69,7 @@ function install_brewfiles() {
     local brewfile="$HOME/Brewfile" file line
     local re_pkg="^(brew|cask) '([^']+)'" re_mas="^mas '([^']+)', id: ([0-9]+)"
 
-    backup_file "$brewfile" Brewfile
+    if [[ -f "$brewfile" ]]; then cp "$brewfile" "$brewfile.bak"; fi
     : > "$brewfile"
     for file in "$@"; do
         cat "$SCRIPT_DIR/brewfiles/$file" >> "$brewfile"
@@ -139,14 +139,8 @@ function setup_node() {
 
     if [[ -s "$NVM_DIR/nvm.sh" ]]; then
         info '✓ nvm already installed'
-        if ! remembered nvm_installed; then
-            remember node_versions "$(ls "$NVM_DIR/versions/node" 2>/dev/null || true)"
-            backup_file "$NVM_DIR/alias/default" nvm_alias_default
-        fi
     else
         notify '🌶 Installing node version manager'
-        remember nvm_installed
-        if [[ ! -f "$HOME/.zshrc" ]]; then remember zshrc.absent; fi
         touch "$HOME/.zshrc"
         curl -fsSL "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | PROFILE="$HOME/.zshrc" bash
     fi
@@ -159,41 +153,6 @@ function setup_node() {
     nvm install --lts
     nvm alias default 'lts/*'
     set -eu
-}
-
-# Set the git identity and optionally create an SSH key
-function setup_git() {
-    local name email answer key="$HOME/.ssh/id_ed25519"
-
-    name="$(git config --global user.name || true)"
-    email="$(git config --global user.email || true)"
-    if [[ -z "$name" ]]; then
-        read -r -p 'Git user name (e.g. Jane Doe): ' name
-        git config --global user.name "$name"
-        remember git_name_set
-    fi
-    if [[ -z "$email" ]]; then
-        read -r -p 'Git e-mail: ' email
-        git config --global user.email "$email"
-        remember git_email_set
-    fi
-
-    if [[ -f "$key" ]]; then return 0; fi
-
-    read -r -n1 -p "Create an SSH key for $email? [y/N] " answer; echo
-    if [[ ! "$answer" =~ ^[Yy]$ ]]; then return 0; fi
-
-    mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
-    ssh-keygen -t ed25519 -C "$email" -f "$key"
-    remember ssh_key_created
-    # markers let the revert remove exactly this block
-    if ! grep -qs UseKeychain "$HOME/.ssh/config"; then
-        printf '%s\nHost *\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519\n%s\n' \
-            "$SSH_MARK_BEGIN" "$SSH_MARK_END" >> "$HOME/.ssh/config"
-    fi
-    ssh-add --apple-use-keychain "$key" || warn 'Could not add the SSH key to the agent'
-    pbcopy < "$key.pub"
-    MANUAL_STEPS+=('Your SSH public key is in the clipboard: add it to GitHub / GitLab')
 }
 
 # Connect the network share (with AppleScript); fails if the software folder is not reachable

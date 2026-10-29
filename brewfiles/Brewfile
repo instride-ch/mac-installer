@@ -22,3 +22,6 @@ cask 'miro'
 ### Microsoft
 cask 'microsoft-office'
 cask 'microsoft-teams'
+
+### Multimedia
+cask 'spotify'

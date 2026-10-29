@@ -19,6 +19,3 @@ cask 'wrike'
 
 ### Adobe CC
 cask 'adobe-creative-cloud'
-
-### Multimedia
-cask 'spotify'

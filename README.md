@@ -31,17 +31,16 @@ Apps that are already installed are detected and skipped, so the script can be r
 | WoPa – Dispo    | `Brewfile`, `Brewfile.wopa_dispo`           | –                                        |
 | WoPa – Vorstufe | `Brewfile`, `Brewfile.wopa_vorstufe`        | Adobe / prepress software from the share |
 | instride – PL   | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_pl`  | –                           |
-| instride – Dev  | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_dev` | nvm + Node LTS, developer settings |
-| instride – UX   | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_ux`  | nvm + Node LTS, developer settings |
+| instride – Dev  | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_dev` | nvm + Node LTS                     |
+| instride – UX   | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_ux`  | nvm + Node LTS                     |
 
 Role settings live in `roles/`, shared logic in `lib/`.
 
 ## 🔄 Update
-Choose `(6) Update` in the menu or run `bash update.sh`.
+Run `update.sh` directly (it is not part of the menu):
 
-## ↩️ Revert
-Choose `(7) Revert` in the menu to undo the changes of the installer:
-macOS settings, Gatekeeper, `~/Brewfile`, nvm / Node.js versions and the `ToInstall` folder.
+```bash
+bash <path-to-folder>/update.sh
+```
 
-Brew packages and the Homebrew PATH entry in `~/.zprofile` stay installed.
-The original state is recorded in `~/.macinstaller/` on the first installer run.
+It updates Homebrew, all formulae and casks, installs new entries of `~/Brewfile` and updates App Store apps.

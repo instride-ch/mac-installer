@@ -11,7 +11,6 @@ ROLES=(wopa_dispo wopa_vorstufe instride_pl instride_dev instride_ux)
 
 source "$SCRIPT_DIR/lib/common.sh"
 source "$SCRIPT_DIR/lib/defaults.sh"
-source "$SCRIPT_DIR/lib/state.sh"
 
 # log everything for support cases
 exec > >(tee -a "$SCRIPT_DIR/install.log") 2>&1
@@ -40,8 +39,6 @@ do
     #  (3) instride – PL                                                   #
     #  (4) instride – Dev                                                  #
     #  (5) instride – UX                                                   #
-    #  (6) Update                                                          #
-    #  (7) Revert changes (brew packages stay installed)                   #
     #  (0) Exit                                                            #
     #                                                                      #
     ########################################################################
@@ -50,8 +47,6 @@ EOF
     # shellcheck source=roles/instride_dev.sh
     case "$choice" in
     [1-5]) source "$SCRIPT_DIR/roles/${ROLES[choice - 1]}.sh"; break     ;;
-    "6")   notify 'Update...'; exec "$SCRIPT_DIR/update.sh"              ;;
-    "7")   revert_all; exit 0                                                ;;
     "0")   exit 0                                                            ;;
      * )   notify 'Invalid option!'                                          ;;
     esac
@@ -77,7 +72,6 @@ else
 fi
 
 defaults_base
-for role_defaults in ${DEFAULTS[@]+"${DEFAULTS[@]}"}; do "defaults_$role_defaults"; done
 restart_ui
 
 print_summary

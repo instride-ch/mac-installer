@@ -17,5 +17,4 @@ SHARE_ITEMS=(
     jjk_mono_framework
     ruler
 )
-DEFAULTS=()
 SETUP_NODE=false
