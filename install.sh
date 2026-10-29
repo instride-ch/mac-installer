@@ -12,8 +12,8 @@ ROLES=(wopa_dispo wopa_vorstufe instride_pl instride_dev instride_ux)
 source "$SCRIPT_DIR/lib/common.sh"
 source "$SCRIPT_DIR/lib/defaults.sh"
 
-# log everything for support cases
-exec > >(tee -a "$SCRIPT_DIR/install.log") 2>&1
+# log everything for support cases (without color / clear-screen escape codes)
+exec > >(tee >(sed -l $'s/\033\\[[0-9;]*[A-Za-z]//g' >> "$SCRIPT_DIR/install.log")) 2>&1
 
 ###############################################################################
 # Menu                                                                        #
