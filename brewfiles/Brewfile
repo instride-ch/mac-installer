@@ -2,23 +2,19 @@
 #     Base Brewfile for all departments           #
 ###################################################
 
-tap 'homebrew/cask'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-
-### OSX Terminal stuff that will make your life easier
+### Terminal tools
 brew 'bash'
+brew 'mas'
 
 ### System tools
 cask '1password'
 cask 'appcleaner'
 
-# let you mount windows drives and write on it
+# FUSE file systems (needs a kernel extension)
 cask 'macfuse'
 
-### Internet stuff
+### Internet
 cask 'google-chrome'
-cask 'responsively'
 
 ### Collaboration & communication
 cask 'miro'
@@ -26,7 +22,3 @@ cask 'miro'
 ### Microsoft
 cask 'microsoft-office'
 cask 'microsoft-teams'
-
-### Multimedia & Tools
-cask 'spotify'
-cask 'airtame'

@@ -2,40 +2,10 @@
 #     Extended Brewfile for instride PL           #
 ###################################################
 
-### System tools
-cask 'hyper'
-cask 'rectangle'
-cask 'the-unarchiver'
-
-# quicklook extensions
-cask 'qlcolorcode'
-cask 'qlimagesize'
-cask 'qlmarkdown'
-cask 'qlstephen'
-cask 'quicklook-csv'
-cask 'quicklook-json'
-cask 'webpquicklook'
-
-### Text, Code, Dev tools
+### Text, code, dev tools
 mas 'Xcode', id: 497799835
 cask 'postman'
 cask 'sourcetree'
-cask 'zed'
 
-### Browser
-cask 'microsoft-edge'
-cask 'firefox'
-cask 'opera'
-
-### Collaboration & communication
-cask 'discord'
-cask 'wrike'
-
-### Adobe CC, Libre Office & Microsoft
-cask 'adobe-creative-cloud'
+### Office
 cask 'libreoffice'
-
-### Multimedia & Tools
-cask 'mirrorop'
-cask 'imageoptim'
-cask 'imagealpha'
