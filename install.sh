@@ -7,7 +7,7 @@ set -euo pipefail
 
 VERSION=3.0.0
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"   # repository root
-ROLES=(wopa_dispo wopa_vorstufe instride_pl instride_dev instride_ux)
+ROLES=(wopa instride_pl instride_dev instride_ux)
 
 source "$SCRIPT_DIR/lib/common.sh"
 source "$SCRIPT_DIR/lib/defaults.sh"
@@ -34,11 +34,10 @@ do
     #                                                                      #
     #  Please enter your choice:                                           #
     #                                                                      #
-    #  (1) WoPa – Dispo                                                    #
-    #  (2) WoPa – Vorstufe                                                 #
-    #  (3) instride – PL                                                   #
-    #  (4) instride – Dev                                                  #
-    #  (5) instride – UX                                                   #
+    #  (1) WoPa                                                            #
+    #  (2) instride – PL                                                   #
+    #  (3) instride – Dev                                                  #
+    #  (4) instride – UX                                                   #
     #  (0) Exit                                                            #
     #                                                                      #
     ########################################################################
@@ -46,7 +45,7 @@ EOF
     read -r -n1 -s choice
     # shellcheck source=roles/instride_dev.sh
     case "$choice" in
-    [1-5]) source "$SCRIPT_DIR/roles/${ROLES[choice - 1]}.sh"; break     ;;
+    [1-4]) source "$SCRIPT_DIR/roles/${ROLES[choice - 1]}.sh"; break     ;;
     "0")   exit 0                                                            ;;
      * )   notify 'Invalid option!'                                          ;;
     esac

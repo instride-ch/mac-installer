@@ -28,8 +28,7 @@ Apps that are already installed are detected and skipped, so the script can be r
 
 | Role            | Brewfiles                                   | Extras                                   |
 |-----------------|---------------------------------------------|------------------------------------------|
-| WoPa – Dispo    | `Brewfile`, `Brewfile.wopa_dispo`           | –                                        |
-| WoPa – Vorstufe | `Brewfile`, `Brewfile.wopa_vorstufe`        | Adobe / prepress software from the share |
+| WoPa            | `Brewfile`, `Brewfile.wopa`                 | Adobe / prepress software from the share |
 | instride – PL   | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_pl`  | –                           |
 | instride – Dev  | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_dev` | nvm + Node LTS                     |
 | instride – UX   | `Brewfile`, `Brewfile.instride`, `Brewfile.instride_ux`  | nvm + Node LTS                     |
@@ -37,7 +36,7 @@ Apps that are already installed are detected and skipped, so the script can be r
 Role settings live in `roles/`, shared logic in `lib/`.
 
 ## 🔄 Update
-Run `update.sh` directly (it is not part of the menu):
+Run `update.sh` directly:
 
 ```bash
 bash <path-to-folder>/update.sh

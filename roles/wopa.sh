@@ -1,8 +1,8 @@
-# Role: WoPa – Vorstufe
+# Role: WoPa
 # shellcheck disable=SC2034  # variables are used by install.sh
 
-ROLE_NAME="WoPa – Vorstufe"
-BREWFILES=(Brewfile Brewfile.wopa_vorstufe)
+ROLE_NAME="WoPa"
+BREWFILES=(Brewfile Brewfile.wopa)
 SHARE_ITEMS=(
     filezilla
     fontexplorer
@@ -10,11 +10,8 @@ SHARE_ITEMS=(
     indesign_pdf_joboptions     # InDesign PDF settings
     indesign_scripts
     indesign_preflight
-    enfocus_21                  # Enfocus PitStop
-    callas_21
-    JJKProduktion3
     jjk_produktion_script
-    jjk_mono_framework
-    ruler
+    xerox_drucker
+    yeastar
 )
 SETUP_NODE=false
