@@ -58,7 +58,6 @@ done
 notify "$ROLE_NAME..."
 
 keep_sudo_alive
-ensure_clt
 ensure_brew
 install_brewfiles "${BREWFILES[@]}"
 

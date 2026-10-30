@@ -36,15 +36,6 @@ function keep_sudo_alive() {
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 }
 
-# Homebrew needs the Xcode Command Line Tools
-function ensure_clt() {
-    if xcode-select -p >/dev/null 2>&1; then return 0; fi
-
-    notify '🛠 Installing Xcode Command Line Tools (confirm the dialog)'
-    xcode-select --install || true
-    until xcode-select -p >/dev/null 2>&1; do sleep 10; done
-}
-
 function brew_path() {
     if [[ "$(uname -m)" == arm64 ]]; then echo /opt/homebrew/bin/brew; else echo /usr/local/bin/brew; fi
 }
