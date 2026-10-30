@@ -1,0 +1,21 @@
+###################################################
+#     Shared Brewfile for instride (Dev, PL, UX)  #
+###################################################
+
+### System tools
+cask 'rectangle'
+
+# Quick Look extensions
+cask 'qlmarkdown'
+cask 'syntax-highlight'
+
+### Browsers (for testing websites)
+cask 'microsoft-edge'
+cask 'firefox'
+cask 'opera'
+
+### Collaboration & communication
+cask 'wrike'
+
+### Adobe CC
+cask 'adobe-creative-cloud'

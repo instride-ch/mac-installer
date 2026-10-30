@@ -1,0 +1,7 @@
+# Role: instride – Dev
+# shellcheck disable=SC2034  # variables are used by install.sh
+
+ROLE_NAME="instride – Dev"
+BREWFILES=(Brewfile Brewfile.instride Brewfile.instride_dev)
+SHARE_ITEMS=(filezilla busylight)
+SETUP_NODE=true
