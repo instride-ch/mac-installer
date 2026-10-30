@@ -43,3 +43,5 @@ bash <path-to-folder>/update.sh
 ```
 
 It updates Homebrew, all formulae and casks, installs new entries of `~/Brewfile` and updates App Store apps.
+**You will be prompted for your system password** (some casks need it to upgrade). If a step fails,
+the others still run and the failed commands are listed at the end.
