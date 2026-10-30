@@ -1,4 +1,6 @@
 #!/bin/bash
+# "sh script.sh" runs bash in POSIX mode, which has no process substitution
+if [[ -o posix ]]; then exec /bin/bash "$0" "$@"; fi
 set -euo pipefail
 
 ###############################################################################
