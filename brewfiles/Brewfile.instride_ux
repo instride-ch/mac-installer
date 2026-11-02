@@ -1,0 +1,17 @@
+###################################################
+#     Extended Brewfile for instride UX           #
+###################################################
+
+### Terminal tools
+brew 'coreutils'
+brew 'curl'
+brew 'git'
+brew 'git-lfs'
+brew 'trash'
+brew 'wget'
+
+### Languages & package managers
+brew 'yarn'
+
+### Design
+cask 'canva'

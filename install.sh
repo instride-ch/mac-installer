@@ -1,51 +1,77 @@
 #!/bin/bash
+# "sh script.sh" runs bash in POSIX mode, which has no process substitution
+if [[ -o posix ]]; then exec /bin/bash "$0" "$@"; fi
+set -euo pipefail
 
 ###############################################################################
 # Variables                                                                   #
 ###############################################################################
 
-BIN=~/MacInstaller/bin                 # shell scripts
+VERSION=3.0.0
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"   # repository root
+ROLES=(wopa instride_pl instride_dev instride_ux)
+
+source "$SCRIPT_DIR/lib/common.sh"
+source "$SCRIPT_DIR/lib/defaults.sh"
+
+# log everything for support cases (without color / clear-screen escape codes)
+exec > >(tee >(sed -l $'s/\033\\[[0-9;]*[A-Za-z]//g' >> "$SCRIPT_DIR/install.log")) 2>&1
 
 ###############################################################################
 # Menu                                                                        #
 ###############################################################################
 
-# logging
-function notify() { echo -e "\n\033[1m$@\033[0m"; }
-
-clear
-notify 'Welcome to Woche-Pass AG, this script will install the Apps you need
-in order to be up and running as quickly as possible'
+clear || true
+notify 'Welcome to Woche-Pass AG / instride AG! This script installs the apps you need
+in order to be up and running as quickly as possible.'
 notify 'Before you start: Check if you manually signed in to the Mac App Store!'
 
-#while :
-#do
+while :
+do
     cat<<EOF
     ########################################################################
     # MacInstaller                                                         #
-    # Version : 2.0.0                                                      #
+    # Version : $VERSION                                                   #
     ########################################################################
     #                                                                      #
     #  Please enter your choice:                                           #
     #                                                                      #
-    #  (1) WoPa – Dispo                                                    #
-    #  (2) WoPa – Vorstufe                                                 #
-    #  (3) instride – PL                                                   #
-    #  (4) instride – Dev                                                  #
-    #  (5) Update                                                          #
+    #  (1) WoPa                                                            #
+    #  (2) instride – PL                                                   #
+    #  (3) instride – Dev                                                  #
+    #  (4) instride – UX                                                   #
     #  (0) Exit                                                            #
     #                                                                      #
     ########################################################################
 EOF
-    read -n1 -s
-    case "$REPLY" in
-    "1")  notify "WoPa – Dispo..."                         | $BIN/wopa_dispo.sh    ;;
-    "2")  notify "WoPa – Vorstufe..."                      | $BIN/wopa_vorstufe.sh ;;
-    "3")  notify "instride – PL..."                        | $BIN/instride_pl.sh   ;;
-    "4")  notify "instride – Dev..."                       | $BIN/instride_dev.sh  ;;
-    "5")  notify "Update..."                               | $BIN/update.sh        ;;
-    "0")  exit                                                                     ;;
-     * )  notify "Invalid option!"                                                 ;;
+    read -r -n1 -s choice
+    # shellcheck source=roles/instride_dev.sh
+    case "$choice" in
+    [1-4]) source "$SCRIPT_DIR/roles/${ROLES[choice - 1]}.sh"; break     ;;
+    "0")   exit 0                                                            ;;
+     * )   notify 'Invalid option!'                                          ;;
     esac
-#    sleep 1
-#done
+done
+
+###############################################################################
+# Installation                                                                #
+###############################################################################
+
+notify "$ROLE_NAME..."
+
+keep_sudo_alive
+ensure_brew
+install_brewfiles "${BREWFILES[@]}"
+
+if [[ "$SETUP_NODE" == true ]]; then setup_node; fi
+
+if mount_share; then
+    copy_from_share "${BASE_SHARE_ITEMS[@]}" "${SHARE_ITEMS[@]}"
+else
+    MISSING_ITEMS+=("${BASE_SHARE_ITEMS[@]}" "${SHARE_ITEMS[@]}")
+fi
+
+defaults_base
+restart_ui
+
+print_summary

@@ -1,0 +1,16 @@
+###################################################
+#     Extended Brewfile for WoPa                  #
+###################################################
+
+### Adobe CC
+cask 'adobe-creative-cloud'
+
+### System tools
+cask 'easyfind'
+
+### Remote Desktop
+cask 'microsoft-remote-desktop'
+
+### Miscellaneous
+cask 'visual-studio-code'
+cask 'dropbox'
