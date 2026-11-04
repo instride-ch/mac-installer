@@ -3,5 +3,5 @@
 
 ROLE_NAME="instride – UX"
 BREWFILES=(Brewfile Brewfile.instride Brewfile.instride_ux)
-SHARE_ITEMS=(filezilla busylight)
+SHARE_ITEMS=(fontexplorer busylight)
 SETUP_NODE=true
